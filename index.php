@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$schematicsDbPath = __DIR__ . '/schematics.db';
+$schematicsDbPath = __DIR__ . '';
 try {
     $sdb = new SQLite3($schematicsDbPath, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
     $sdb->exec("CREATE TABLE IF NOT EXISTS schematic_icons (
@@ -20,7 +20,7 @@ try {
 }
 
 try {
-    $db = new SQLite3(__DIR__ . '/users.db', SQLITE3_OPEN_READWRITE);
+    $db = new SQLite3(__DIR__ . '', SQLITE3_OPEN_READWRITE);
 } catch (Exception $e) {
     die("Users-DB Fehler: " . $e->getMessage());
 }
